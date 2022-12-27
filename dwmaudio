@@ -1,0 +1,16 @@
+#!/bin/bash
+
+FULL_STATUS=$(pulseaudio-ctl full-status)
+
+VOL=$(echo "$FULL_STATUS" | cut -d' ' -f1)
+MIC_ON_OFF=$(echo "$FULL_STATUS" | cut -d' ' -f3)
+
+if [ $MIC_ON_OFF == "no" ]; then
+    MIC_ON_OFF="On"
+elif [ $MIC_ON_OFF == "yes" ]; then
+    MIC_ON_OFF="Off"
+else
+    MIC_ON_OFF="undefined"
+fi
+
+printf "Vol: %s%% Mic: %s" $VOL $MIC_ON_OFF

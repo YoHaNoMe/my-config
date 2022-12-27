@@ -1,0 +1,5 @@
+#!/bin/bash
+
+MDATE="$(date '+ %a, %b %d %Y %I:%M%P')"
+
+printf "%s" "$MDATE"

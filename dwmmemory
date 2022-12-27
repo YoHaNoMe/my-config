@@ -1,0 +1,6 @@
+#!/bin/bash
+
+USED_MEM="$(free -g | awk '{print $3}' | head -n 2 | tail -n 1)"
+TOTAL_MEM="$(free -g | awk '{print $2}' | head -n 2 | tail -n 1)"
+
+printf "Memory: %sGB / %sGB" "$USED_MEM" "$TOTAL_MEM"
