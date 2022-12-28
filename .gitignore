@@ -1,1 +1,7 @@
-dwn/*.rej
+!/dwm/config.def.h
+!/dwm/config.mk
+!/dwm/dwm.1
+!/dwm/dwm.c
+!/dwm/Makefile
+!/dwm/LICENSE
+!/dwm/README
