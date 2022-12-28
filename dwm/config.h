@@ -73,11 +73,15 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *reboot[]  = { "systemctl", "reboot", NULL };
 static const char *shutdown[]  = { "systemctl", "shutdown", NULL };
+static const char *browser[] = {"firefox", NULL};
+static const char *browserp[] = {"firefox", "--private", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                    XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,	                    XK_b,	   spawn,          {.v = browserp } },
+	{ MODKEY|ShiftMask,             XK_b,	   spawn,          {.v = browser } },
 	{ MODKEY|ControlMask,           XK_b,      togglebar,      {0} }, /* toggle bar (show/hide)*/
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
