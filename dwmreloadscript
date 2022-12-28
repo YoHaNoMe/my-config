@@ -1,7 +1,10 @@
 #!/bin/bash
 
-PID="$(ps ax | grep 'dwmscript' | head -n1 | cut -d' ' -f3)"
+pgrep -f /home/youssef/.config/dwm-conf/dwmscript.sh > dumpfile
 
-kill $PID 2>/dev/null
+while read -r pid;
+do
+    kill $pid 2>/dev/null
+done < dumpfile
 
 /home/youssef/.config/dwm-conf/dwmscript.sh &

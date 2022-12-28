@@ -72,7 +72,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_primary, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *reboot[]  = { "systemctl", "reboot", NULL };
-static const char *shutdown[]  = { "systemctl", "shutdown", NULL };
+static const char *shutdown[]  = { "systemctl", "poweroff", NULL };
 static const char *browser[] = {"firefox", NULL};
 static const char *browserp[] = {"firefox", "--private", NULL};
 

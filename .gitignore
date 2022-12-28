@@ -2,4 +2,4 @@ dwm/*
 !dwm/config.def.h
 !dwm/config.mk
 !dwm/dwm.c
-
+dumpfile
