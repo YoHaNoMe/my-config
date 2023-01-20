@@ -72,15 +72,16 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_primary, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *reboot[]  = { "systemctl", "reboot", NULL };
-static const char *shutdown[]  = { "systemctl", "poweroff", NULL };
+static const char *suspend[]  = { "systemctl", "suspend", NULL };
+static const char *poweroff[]  = { "systemctl", "poweroff", NULL };
 static const char *browser[] = {"firefox", NULL};
 static const char *browserp[] = {"firefox", "--private", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,	                    XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,	                    XK_b,	   spawn,          {.v = browser } },
+	{ MODKEY,	                XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,	                XK_b,	   spawn,          {.v = browser } },
 	{ MODKEY|ShiftMask,             XK_b,	   spawn,          {.v = browserp } },
 	{ MODKEY|ControlMask,           XK_b,      togglebar,      {0} }, /* toggle bar (show/hide)*/
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -99,7 +100,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_s,      setlayout,      {.v = &layouts[3]} }, /* bstack layout*/
 	{ MODKEY|ShiftMask,             XK_s,      setlayout,      {.v = &layouts[4]} }, /* bstackhoriz layout*/
 	{ MODKEY,                       XK_x,      setlayout,      {.v = &layouts[5]} }, /* centeredmaster layout*/
-	{ MODKEY|ShiftMask, 			XK_x,      setlayout,      {.v = &layouts[6]} }, /* centeredfloatingmaster layout*/
+	{ MODKEY|ShiftMask, 		XK_x,      setlayout,      {.v = &layouts[6]} }, /* centeredfloatingmaster layout*/
 	/*{ MODKEY,                       XK_space,  setlayout,      {0} },*/
 	/*{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },*/
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -111,8 +112,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
-	{ MODKEY|ControlMask,           XK_r,      spawn,          {.v = reboot  } },
-	{ MODKEY|ControlMask,           XK_s,      spawn,          {.v = shutdown  } },
+	{ MODKEY|ControlMask,           XK_r,      spawn,          {.v = reboot  } }, /* reboot */
+	{ MODKEY|ControlMask,           XK_s,      spawn,          {.v = suspend  } }, /* suspend */
+	{ MODKEY|ControlMask,           XK_p,      spawn,          {.v = poweroff  } }, /* power off */
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
