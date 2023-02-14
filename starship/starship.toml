@@ -16,3 +16,11 @@ palette = 'foo'
 blue = '21'
 # Define new color
 mustard = '#af8700'
+
+
+
+
+[directory]
+#style = '#B87333'
+truncation_symbol = '../'
+

@@ -42,7 +42,7 @@ static const Rule rules[] = {
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
-static const int attachdirection = 0;    /* 0 default, 1 above, 2 aside, 3 below, 4 bottom, 5 top */
+static int attachdirection = 2;    /* 0 default, 1 above, 2 aside, 3 below, 4 bottom, 5 top */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -76,12 +76,13 @@ static const char *suspend[]  = { "systemctl", "suspend", NULL };
 static const char *poweroff[]  = { "systemctl", "poweroff", NULL };
 static const char *browser[] = {"firefox", NULL};
 static const char *browserp[] = {"firefox", "--private", NULL};
+static const char *changeLayout[] = {"/home/youssef/.config/dwm-conf/dwmreloadscript", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,	                XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,	                XK_b,	   spawn,          {.v = browser } },
+	{ MODKEY,	                    XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,	                    XK_b,	   spawn,          {.v = browser } },
 	{ MODKEY|ShiftMask,             XK_b,	   spawn,          {.v = browserp } },
 	{ MODKEY|ControlMask,           XK_b,      togglebar,      {0} }, /* toggle bar (show/hide)*/
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -100,7 +101,14 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_s,      setlayout,      {.v = &layouts[3]} }, /* bstack layout*/
 	{ MODKEY|ShiftMask,             XK_s,      setlayout,      {.v = &layouts[4]} }, /* bstackhoriz layout*/
 	{ MODKEY,                       XK_x,      setlayout,      {.v = &layouts[5]} }, /* centeredmaster layout*/
-	{ MODKEY|ShiftMask, 		XK_x,      setlayout,      {.v = &layouts[6]} }, /* centeredfloatingmaster layout*/
+	{ MODKEY|ShiftMask, 		    XK_x,      setlayout,      {.v = &layouts[6]} }, /* centeredfloatingmaster layout*/
+	{ MODKEY2, 		    			XK_space,  spawn,	       {.v = changeLayout} }, /* change layout to ar|us*/
+	// { MODKEY|MODKEY2, 		        XK_1,      attachToggle,   {0} }, /* attach: default*/
+	// { MODKEY|MODKEY2, 		        XK_2,      attachToggle,   {1} }, /* attach: above*/
+	// { MODKEY|MODKEY2, 		        XK_3,      attachToggle,   {2} }, /* attach: aside*/
+	// { MODKEY|MODKEY2, 		        XK_4,      attachToggle,   {3} }, /* attach: below*/
+	// { MODKEY|MODKEY2, 		        XK_5,      attachToggle,   {4} }, /* attach: bottom*/
+	// { MODKEY|MODKEY2, 		        XK_6,      attachToggle,   {5} }, /* attach: top*/
 	/*{ MODKEY,                       XK_space,  setlayout,      {0} },*/
 	/*{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },*/
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
