@@ -23,13 +23,13 @@ elif [ $1 == 'h' ]; then
     Help
 elif [ $1 == 'u' ]; then
     pulseaudio-ctl up
-    /home/youssef/.config/dwm-conf/dwmreloadscript &
+    pkill -RTMIN+10 dwmblocks
 elif [ $1 == 'd' ]; then
     pulseaudio-ctl down
-    /home/youssef/.config/dwm-conf/dwmreloadscript &
+    pkill -RTMIN+10 dwmblocks
 elif [ $1 == 'm' ]; then
     pulseaudio-ctl mute-input
-    /home/youssef/.config/dwm-conf/dwmreloadscript &
+    pkill -RTMIN+10 dwmblocks
 else
     echo "Invalid parameter"
 fi

@@ -2,4 +2,4 @@
 
 MDATE="$(date '+ %a, %b %d %Y %I:%M%P')"
 
-printf "%s" "$MDATE"
+printf "^c#934d68^ %s ^d^" "$MDATE"

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+MEM_TEXT_CPU_TEXT="$(conky -i 1 -q -t '$mem - $cpu%')"
+
+printf "^c#6F7986^ %s ^d^" "$MEM_TEXT_CPU_TEXT"

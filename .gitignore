@@ -3,3 +3,50 @@ dwm/*
 !dwm/config.mk
 !dwm/dwm.c
 dumpfile
+# Custom blocks file
+dwmblocks/blocks.h
+# Prerequisites
+dwmblocks/*.d
+# Object files
+dwmblocks/*.o
+dwmblocks/*.ko
+dwmblocks/*.obj
+dwmblocks/*.elf
+# Linker output
+dwmblocks/*.ilk
+dwmblocks/*.map
+dwmblocks/*.exp
+# Precompiled Headers
+dwmblocks/*.gch
+dwmblocks/*.pch
+# Libraries
+dwmblocks/*.lib
+dwmblocks/*.a
+dwmblocks/*.la
+dwmblocks/*.lo
+# Shared objects (inc. Windows DLLs)
+dwmblocks/*.dll
+dwmblocks/*.so
+dwmblocks/*.so.*
+dwmblocks/*.dylib
+# Executables
+dwmblocks/*.exe
+dwmblocks/*.out
+dwmblocks/*.app
+dwmblocks/*.i*86
+dwmblocks/*.x86_64
+dwmblocks/*.hex
+dwmblocks/dwmblocks
+# Debug files
+dwmblocks/*.dSYM/
+dwmblocks/*.su
+dwmblocks/*.idb
+dwmblocks/*.pdb
+# Kernel Module Compile Results
+dwmblocks/*.mod*
+dwmblocks/*.cmd
+dwmblocks/.tmp_versions/
+dwmblocks/modules.order
+dwmblocks/Module.symvers
+dwmblocks/Mkfile.old
+dwmblocks/dkms.conf

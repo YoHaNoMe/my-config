@@ -38,15 +38,15 @@
 #keystate_scrolllock= enable
 
 # Increase volume
-"/home/youssef/.config/dwm-conf/dwmaudioscript.sh u &"
+"/home/youssef/.config/dwm-conf/scripts/dwmaudioscript.sh u &"
    XF86AudioRaiseVolume
 
 # Decrease volume
-"/home/youssef/.config/dwm-conf/dwmaudioscript.sh d &"
+"/home/youssef/.config/dwm-conf/scripts/dwmaudioscript.sh d &"
    XF86AudioLowerVolume
 
 # Mute microphone
-"/home/youssef/.config/dwm-conf/dwmaudioscript.sh m &"
+"/home/youssef/.config/dwm-conf/scripts/dwmaudioscript.sh m &"
    XF86AudioMute
 
 

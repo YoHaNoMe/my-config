@@ -26,7 +26,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1", "2", "3", "4", "5" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -76,7 +76,10 @@ static const char *suspend[]  = { "systemctl", "suspend", NULL };
 static const char *poweroff[]  = { "systemctl", "poweroff", NULL };
 static const char *browser[] = {"firefox", NULL};
 static const char *browserp[] = {"firefox", "--private", NULL};
-static const char *changeLayout[] = {"/home/youssef/.config/dwm-conf/dwmreloadscript", NULL};
+static const char *screenshot[] = {"/home/youssef/.config/dwm-conf/screenshot.sh", "s", NULL};
+static const char *screenshotFull[] = {"/home/youssef/.config/dwm-conf/screenshot.sh", "f", NULL};
+static const char *changeLayout[] = {"/home/youssef/.config/dwm-conf/scripts/dwmreloadlayout", NULL};
+
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -84,6 +87,8 @@ static const Key keys[] = {
 	{ MODKEY,	                    XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,	                    XK_b,	   spawn,          {.v = browser } },
 	{ MODKEY|ShiftMask,             XK_b,	   spawn,          {.v = browserp } },
+	{ MODKEY, 			            XK_e,	   spawn,          {.v = screenshot } },
+	{ MODKEY|ShiftMask, 			XK_e,	   spawn,          {.v = screenshotFull } },
 	{ MODKEY|ControlMask,           XK_b,      togglebar,      {0} }, /* toggle bar (show/hide)*/
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

@@ -13,4 +13,4 @@ else
     MIC_ON_OFF="undefined"
 fi
 
-printf "Vol: %s%% Mic: %s" $VOL $MIC_ON_OFF
+printf "^c#B87333^ Vol: %s%% Mic: %s ^d^" $VOL $MIC_ON_OFF

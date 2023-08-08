@@ -22,5 +22,8 @@ mustard = '#af8700'
 
 [directory]
 #style = '#B87333'
+truncation_length = 2
+#disabled = true
+truncate_to_repo = false
 truncation_symbol = '../'
 
