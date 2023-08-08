@@ -3,8 +3,6 @@ dwm/*
 !dwm/config.mk
 !dwm/dwm.c
 dumpfile
-# Custom blocks file
-dwmblocks/blocks.h
 # Prerequisites
 dwmblocks/*.d
 # Object files

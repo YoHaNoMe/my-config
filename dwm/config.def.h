@@ -76,8 +76,8 @@ static const char *suspend[]  = { "systemctl", "suspend", NULL };
 static const char *poweroff[]  = { "systemctl", "poweroff", NULL };
 static const char *browser[] = {"firefox", NULL};
 static const char *browserp[] = {"firefox", "--private", NULL};
-static const char *screenshot[] = {"/home/youssef/.config/dwm-conf/screenshot.sh", "s", NULL};
-static const char *screenshotFull[] = {"/home/youssef/.config/dwm-conf/screenshot.sh", "f", NULL};
+static const char *screenshot[] = {"/home/youssef/.config/dwm-conf/scripts/screenshot.sh", "s", NULL};
+static const char *screenshotFull[] = {"/home/youssef/.config/dwm-conf/scripts/screenshot.sh", "f", NULL};
 static const char *changeLayout[] = {"/home/youssef/.config/dwm-conf/scripts/dwmreloadlayout", NULL};
 
 
